@@ -2,7 +2,7 @@ import React from "react";
 import { TextInput, Button, Group, Box } from "@mantine/core";
 import { useForm } from "@mantine/form";
 
-const projectForm = ({ onClose }) => {
+const taskForm = ({ onClose }) => {
   const form = useForm({
     initialValues: {
       name: "",
@@ -60,4 +60,4 @@ const projectForm = ({ onClose }) => {
   );
 };
 
-export default projectForm;
+export default taskForm;
