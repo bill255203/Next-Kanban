@@ -1,16 +1,25 @@
-import React from 'react';
+import React from "react";
 
-const card = () => {
+const Card = ({ tasks }) => {
   return (
     <>
-      <div className='card w-[200px] h-[200px] bg-gray-300 m-[20px] p-[20px] '>
-        <div className='task flex flex-row font-bold'>Task 1</div>
-      </div>
-      <div className='card w-[200px] h-[200px] bg-gray-300 m-[20px] p-[20px] '>
-        <div className='task flex flex-row font-bold'>Task 2</div>
-      </div>
+      {tasks.map((task, index) => (
+        <div
+          key={index}
+          className="card w-[200px] h-[150px] bg-gray-300 m-[20px] p-[20px] "
+        >
+          <div className="task-name font-bold">{task.name}</div>
+          <div
+            className="task-content-container overflow-y-auto"
+            style={{ maxHeight: "100px" }} // Adjust this value as needed
+          >
+            <div className="task-content">{task.content}</div>
+            <div className="task-explanation">{task.explanation}</div>
+          </div>
+        </div>
+      ))}
     </>
   );
 };
 
-export default card;
+export default Card;
